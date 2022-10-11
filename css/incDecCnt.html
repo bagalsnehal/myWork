@@ -1,0 +1,24 @@
+import { useState } from "react";
+import "./styles.css";
+
+export default function App() {
+  const [cnt, setcnt]=useState(0);
+  
+
+  const decCnt =()=>{
+  setcnt(cnt-1)
+  }
+  const IncCnt =()=>{
+    setcnt(cnt+1)
+  }
+
+  return (
+    <div className="App">
+      
+      <button onClick={decCnt}> - </button>  
+       <b> {cnt} </b>    
+      <button onClick={IncCnt}> + </button>
+      
+    </div>
+  );
+}

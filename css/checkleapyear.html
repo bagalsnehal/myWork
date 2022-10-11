@@ -1,0 +1,35 @@
+<script src="react.development.js"></script>
+<script src="react-dom.development.js"></script>
+<script src="babel.min.js"></script>
+
+
+<div id="root"></div>
+
+
+<script type="text/babel">
+    function App() {
+    var n1Ref=React.useRef()
+    var resRef=React.useRef()
+      const fnClick=()=>{
+            var n1=n1Ref.current.value
+            if (n1 % 4==0){
+                var res1="Year is Leap year"
+            }else{
+                var res1="Year is normal"
+            }
+            resRef.current.innerText=res1
+
+    }
+
+
+    return<div>
+        <b>No:</b><input ref={n1Ref} placeholder="enter your no"/>
+        <br/>
+        <br/>
+        <button onClick={fnClick}>Submit</button>
+        <h1 ref={resRef}></h1>
+        </div>
+
+    }
+ReactDOM.render(<App/>,document.getElementById("root"))
+</script>

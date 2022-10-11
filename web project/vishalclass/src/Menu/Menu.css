@@ -1,0 +1,11 @@
+.menu{
+    text-align: right;
+    background-color: cadetblue;
+    font-size: 20px;
+    font-style: italic;
+}
+
+.menu>a{
+    margin: 20px
+    ;
+}

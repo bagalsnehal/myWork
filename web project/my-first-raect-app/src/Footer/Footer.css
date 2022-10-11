@@ -1,0 +1,9 @@
+.footer{
+    background-color: yellow;
+    position: fixed;
+    bottom: 0px;
+    text-align: center;
+    width: 100%;
+    font-size: 10px;
+    line-height: 12px;
+}

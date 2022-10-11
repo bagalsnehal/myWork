@@ -1,0 +1,31 @@
+<script src="react.development.js"></script>
+<script src="babel.min.js"></script>
+<script src="react-dom.development.js"></script>
+
+
+
+
+
+<div id="root"></div>
+
+
+<script type="text/babel">
+  class Name extends React.Component{
+      render(){
+        return <h1> hellow sachin </h1>
+      }
+
+  }
+    
+      
+      function App(){
+          return <div>
+            <Name/> <Name/> <Name/> <Name/> <Name/> <Name/>
+            </div>
+          
+
+       }
+       const container=ReactDOM.createRoot(document.getElementById('root'));
+       container.render(<App/>)
+
+    </script>

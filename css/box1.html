@@ -1,0 +1,34 @@
+<script src="react.development.js"></script>
+<script src="babel.min.js"></script>
+<script src="react-dom.development.js"></script>
+<style>
+    .box{
+
+        width: 100px;
+    height: 100px;
+    display: inline-block;
+    border: 1px solid red;
+    text-align: center;
+}
+    
+</style>
+<div id="root"></div>
+
+<script type="text/babel">
+
+      function Box(){
+         return <div calssName='box'></div>
+
+      }
+      
+   
+      
+      
+    const root=ReactDOM.createRoot(document.getElementById('root'));
+    root.render(<Box/>)
+
+
+</script>
+
+      
+

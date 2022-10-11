@@ -1,0 +1,29 @@
+<script src="react.development.js"></script>
+<script src="babel.min.js"></script>
+<script src="react-dom.development.js"></script>
+
+
+<div id="root"></div>
+
+
+
+<script type="text/babel">
+    class Player extends React.Component{
+        render(){
+            return <h1>hellow i m {this.props.n},i m from {this.props.children},runs are {this.props.r}</h1>
+        }
+    }
+    
+         
+    class App extends React.Component{
+        render(){
+            return <div>
+            <Player n='snehal' r='2000'>osmanabad</Player>
+            <Player n='vishal' r='3000'>osmanabad</Player>
+            </div>
+
+        }
+    }
+          const root=ReactDOM.createRoot(document.getElementById('root'));
+    root.render(<App/>)
+</script>

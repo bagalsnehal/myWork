@@ -1,0 +1,31 @@
+<script src="react.development.js"></script>
+<script src="react-dom.development.js"></script>
+<script src="babel.min.js"></script>
+
+
+<div id="root"></div>
+<script type="text/babel">
+    function App() {
+        function fnClick() {
+            var n1=document.getElementById("no1").value
+            if (Number(n1) % 2 == 0){
+                    var res1="number is even"
+            }else{
+                var res1="number is odd"
+            }
+            var resRef=document.getElementById("res")
+            resRef.innerText=res1
+        }
+    
+
+
+
+    return<div>
+        <b>No: </b><input id="no1" placeholder="enter your no"/><br/>
+        <button onClick={fnClick}>Submit</button>
+        <h1 id="res">0</h1>
+        </div>
+
+    }
+ReactDOM.render(<App/>,document.getElementById("root"))
+</script>

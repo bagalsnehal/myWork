@@ -1,0 +1,43 @@
+<script src="react.development.js"></script>
+<script src="babel.min.js"></script>
+<script src="react-dom.development.js"></script>
+<style>
+     .box{
+      width: 100px;
+    height: 100px;
+    display: inline-block;
+    border: 30px solid red;
+    text-align: center;
+    line-height: 100px;
+   
+     }
+
+   </style>
+
+<div id="root"></div>
+
+<script type="text/babel">
+
+      function Box(obj){
+         return <div className='box'>{obj.no}</div>
+
+      }
+      
+   
+      function App(){
+         return <div>
+            <div><Box no='1'/><Box no='2'/></div>
+            <div><Box no='3'/><Box no='4'/></div>
+            
+            
+            </div>
+
+      }
+    const root=ReactDOM.createRoot(document.getElementById('root'));
+    root.render(<App/>)
+
+
+</script>
+
+      
+

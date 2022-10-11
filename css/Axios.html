@@ -1,0 +1,28 @@
+<script src="react.development.js"></script>
+<script src="babel.min.js"></script>
+<script src="react-dom.development.js"></script>
+<script src="axios.min.js"></script>
+<div id="root"></div>
+<script type="text/babel">
+    const App=()=>{
+        let res;
+        const fnClick=()=>{
+            axios.get('https://jsonplaceholder.typicode.com/user')
+            .then(res=()=>{
+                return responce.json()
+            })
+            .then(res=()=>{
+               alert(res,'success') 
+        })
+        .catch(res=()=>{
+               alert(res,'failure') 
+        })
+        return <div>
+            <button onClick={fnClick}>clik me</button>
+            <p>{res}</p>
+            </div>
+    }
+    const container=ReactDOM.createRoot(document.getElementById('root'));
+    container.render(<App/>)
+}
+</script>

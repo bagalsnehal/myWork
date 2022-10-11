@@ -1,0 +1,47 @@
+<script src="react.development.js"></script>
+<script src="babel.min.js"></script>
+<script src="react-dom.development.js"></script>
+<div id="root"></div>
+
+
+<script type="text/babel">
+      
+      class App extends React.Component{ 
+          n1Ref=React.createRef()
+          n2Ref=React.createRef()
+          resRef=React.createRef()
+         fnClick=()=>{
+            let n1= this.n1Ref.current.value
+            let n2= this.n2Ref.current.value
+            let sum=Number(n1)+Number(n2)
+            this.resRef.current.innerText=sum
+            
+         }       
+          render(){
+          return <div>
+                 <p>
+                    <b>NO1:</b><input ref={this.n1Ref}/>
+                    
+                </p>
+                <p>
+                    <b>NO2:</b><input ref={this.n2Ref}/>
+                    
+                </p>
+                <p>
+                    <button onClick={this.fnClick}>click</button>
+                </p>
+                <p>
+                    <h3>Result:</h3><h1 ref={this.resRef}></h1>
+                    
+                </p>
+            
+            </div>
+
+
+          }
+        }
+        const root=ReactDOM.createRoot(document.getElementById('root'));
+    root.render(<App/>)
+        
+
+    </script>

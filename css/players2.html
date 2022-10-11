@@ -1,0 +1,23 @@
+
+<script src="react.development.js"></script>
+<script src="babel.min.js"></script>
+<script src="react-dom.development.js"></script>
+
+
+<div id="root"></div>
+
+
+
+<script type="text/babel">
+    function Player(obj){
+        return <h1>hellow i m {obj.n},i m from {obj.children},runs are {obj.r}</h1>
+    }
+      function App(){
+          return <div>
+            <Player n='snehal' r='2000'>osmanabad</Player>
+            <Player n='vishal' r='3000'>osmanabad</Player>
+            </div>
+      }
+      const root=ReactDOM.createRoot(document.getElementById('root'));
+    root.render(<App/>)
+</script>

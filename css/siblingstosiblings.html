@@ -1,0 +1,60 @@
+<script src="react.development.js"></script>
+<script src="babel.min.js"></script>
+<script src="react-dom.development.js"></script>
+<div id="root"></div>
+<script type="text/babel">
+
+class B extends React.Component{
+    render(){
+        return <div>
+            <h1>B={this.prpos.n}</h1>
+            </div>
+    }
+}
+
+class A extends React.Component{
+    nameRef=React.createRef()
+    fnClick=()=>{
+        let name=this.nameRef.current.value
+        alert(name)
+        this.props.f(name)
+    }
+    render(){
+        return <div>
+            <p>
+                <h1>A:</h1>
+            </p>
+            <p>
+                name:<input ref={this.nameRef}/>
+            </p>
+            <p>
+                <button onClick={this.fnClick}>click</button>
+            </p>    
+            </div>
+    }
+}
+class App extends React.Component{
+    state={
+        name:'not yet recived'
+    }
+    cb=(name)=>{
+        this.setState({
+            name:name
+        })
+    }
+    render(){
+        return <div>
+            <h1>parent:</h1>
+            <A f={this.cb}/>
+            <B n={this.state.name}/>
+            </div>
+    }
+}
+
+
+const root=ReactDOM.createRoot(document.getElementById('root'));
+    root.render(<App/>)
+</script>
+
+
+          

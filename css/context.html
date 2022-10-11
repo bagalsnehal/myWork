@@ -1,0 +1,60 @@
+<script src="react.development.js"></script>
+<script src="babel.min.js"></script>
+<script src="react-dom.development.js"></script>
+
+<div id="root"></div>
+<script type="text/babel">
+   const ctx=React.createContext();
+
+  const D=()=>{
+   const ctxData= React.useContext(ctx)
+        return <div>
+            <h1>D :{ctxData}</h1>
+           
+            </div>
+    }
+
+
+  
+const C=()=>{
+        return <div>
+            <h1>C</h1>
+            </div>
+    }
+
+const B=()=>{
+
+        return <div>
+            <h1>B</h1>
+            <D/>
+           
+            </div>
+    }
+
+
+const A=()=>{
+        return <div>
+            <h1>A</h1>
+            <B/>
+            <C/>
+            </div>
+    }
+
+
+const App=()=>{
+    const name='sachin'
+        return <div>
+            <h1>App</h1>
+            <ctx.Provider value={name}>
+                <A/>
+            </ctx.Provider>
+            
+            </div>
+    }
+
+
+
+const container=ReactDOM.createRoot(document.getElementById('root'));
+    container.render(<App/>)
+</script>
+

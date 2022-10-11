@@ -1,0 +1,75 @@
+<script src="react.development.js"></script>
+<script src="react-dom.development.js"></script>
+<script src="babel.min.js"></script>
+
+
+<div id="root"></div>
+
+<script type="text/babel">
+
+    function App() {
+        var n1Ref=React.useRef()
+        var resRef=React.useRef()
+
+        function checkprime(){
+            var n1=n1Ref.current.value
+            var sol=isprime(n1)
+            if (sol){
+                var res1='is a prime'
+            }else{
+                var res1='not a prime'
+            }
+            resRef.current.innerText=res1
+        }
+        function Getprime(){
+            var n1=n1Ref.current.value
+            var prime=[]
+            for (var i=1;i<=n1;i++)
+                if (isprime(i)){
+                    prime.push(i)
+                }
+            resRef.current.innerText=prime
+        }
+        
+
+
+        function isprime (n1){
+            var factors=0;
+            for (var i=1;i<=n1;i++)
+            if (n1%i==0){
+            factors++  
+            }
+            if(factors==2){
+                return true
+            }else{
+                return false
+            }
+            
+        }
+        
+        
+        return<div>
+        
+            <p> 
+                <b>No1:</b><input ref={n1Ref} placeholder="Enter the no" />
+            </p>
+            <p>
+                <input onClick={checkprime} type="button" value="Check prime"/>
+            </p>
+            <p>
+                <input onClick={Getprime} type="button" value="Get prime"/>
+            </p>
+            <p>
+                <h1 ref={resRef}>0</h1>    
+            </p>
+           
+        
+        </div>
+    }
+
+
+
+
+
+    ReactDOM.render(<App />,document.getElementById("root"))
+</script>
